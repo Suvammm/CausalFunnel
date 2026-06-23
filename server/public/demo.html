@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CausalFunnel Demo Store</title>
+    <style>
+      :root {
+        color: #14213d;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #f7f2ea;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+      }
+
+      .hero {
+        min-height: 76vh;
+        display: grid;
+        grid-template-columns: minmax(280px, 0.9fr) minmax(320px, 1.1fr);
+        gap: 48px;
+        align-items: center;
+        padding: 36px clamp(20px, 6vw, 90px);
+        background:
+          radial-gradient(circle at 80% 20%, rgba(255, 183, 77, 0.4), transparent 28%),
+          linear-gradient(135deg, #fffaf0 0%, #dbeafe 55%, #c7f9cc 100%);
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px clamp(20px, 6vw, 90px);
+        background: rgba(255, 255, 255, 0.72);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(20, 33, 61, 0.1);
+      }
+
+      nav strong {
+        font-size: 18px;
+      }
+
+      nav a {
+        color: #14213d;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      h1 {
+        margin: 0 0 18px;
+        font-size: clamp(42px, 6vw, 76px);
+        line-height: 0.95;
+        letter-spacing: 0;
+      }
+
+      p {
+        color: #43526b;
+        font-size: 18px;
+        line-height: 1.7;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 28px;
+      }
+
+      button,
+      .button {
+        border: 0;
+        border-radius: 8px;
+        padding: 14px 20px;
+        cursor: pointer;
+        font: inherit;
+        font-weight: 800;
+        color: #fff;
+        background: #0f766e;
+        box-shadow: 0 12px 28px rgba(15, 118, 110, 0.22);
+      }
+
+      .button.secondary {
+        color: #14213d;
+        background: #ffffff;
+      }
+
+      .product {
+        min-height: 440px;
+        border-radius: 8px;
+        padding: 28px;
+        display: grid;
+        align-content: end;
+        background:
+          linear-gradient(180deg, transparent, rgba(7, 16, 38, 0.78)),
+          url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1100&q=80")
+            center/cover;
+        color: white;
+        box-shadow: 0 28px 80px rgba(20, 33, 61, 0.2);
+      }
+
+      .product p {
+        color: rgba(255, 255, 255, 0.84);
+      }
+
+      .grid {
+        padding: 54px clamp(20px, 6vw, 90px);
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        background: #ffffff;
+      }
+
+      .tile {
+        border: 1px solid #e8edf3;
+        border-radius: 8px;
+        padding: 24px;
+      }
+
+      .tile h2 {
+        margin: 0;
+        font-size: 22px;
+      }
+
+      @media (max-width: 820px) {
+        .hero,
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          padding-top: 94px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <strong>Northline Supply</strong>
+      <a href="http://localhost:5173">Analytics Dashboard</a>
+    </nav>
+
+    <main class="hero">
+      <section>
+        <h1>Trail-ready essentials with a clean analytics trail.</h1>
+        <p>
+          This demo storefront is instrumented with the assignment tracker. Open the dashboard,
+          click around here, and watch session journeys and heatmap clicks appear.
+        </p>
+        <div class="actions">
+          <button>Shop jackets</button>
+          <button class="button secondary">View lookbook</button>
+        </div>
+      </section>
+
+      <section class="product">
+        <h2>Alpine Shell</h2>
+        <p>Weatherproof outerwear with recycled ripstop and clean technical lines.</p>
+        <button>Add to cart</button>
+      </section>
+    </main>
+
+    <section class="grid">
+      <article class="tile">
+        <h2>Fast checkout</h2>
+        <p>Click here to generate another useful interaction point for the heatmap.</p>
+      </article>
+      <article class="tile">
+        <h2>Size finder</h2>
+        <p>Product discovery moments are captured as session events.</p>
+      </article>
+      <article class="tile">
+        <h2>Free returns</h2>
+        <p>Use this area to create clicks across the lower part of the page.</p>
+      </article>
+    </section>
+
+    <script src="/tracker.js" data-endpoint="http://localhost:4000/api/events"></script>
+  </body>
+</html>
