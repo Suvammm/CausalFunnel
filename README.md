@@ -3,9 +3,9 @@
 A small full-stack analytics application that tracks `page_view` and `click` events, stores them in MongoDB, and visualizes sessions and page clicks in a React dashboard.
 
 <p align="center">
-   <img src="![Dashboard](client/img1.png)" width="45%" />
-   <img src="![Dashboard](client/img2.png)" width="45%" />
-   </p>
+   <img src="client/img1.png" width="45%" />
+   <img src="client/img2.png" width="45%" />
+</p>
 ## Tech Stack
 
 - React + Vite dashboard
