@@ -6,6 +6,10 @@ A small full-stack analytics application that tracks `page_view` and `click` eve
    <img src="client/img1.png" width="50%" />
    <img src="client/img2.png" width="50%" />
 </p>
+<p align="center">
+   <img src="client/img3.png" width="45%" />
+   <img src="client/img4.png" width="45%" />
+</p>
 ## Tech Stack
 
 - React + Vite dashboard
