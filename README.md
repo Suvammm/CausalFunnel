@@ -1,7 +1,7 @@
 # CausalFunnel User Analytics Assignment
 
 A small full-stack analytics application that tracks `page_view` and `click` events, stores them in MongoDB, and visualizes sessions and page clicks in a React dashboard.
-
+![Dashboard](client/img1.png)
 ## Tech Stack
 
 - React + Vite dashboard
